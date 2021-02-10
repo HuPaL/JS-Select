@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .container {
   padding-top: 5rem;
   display: flex;
@@ -6,6 +11,92 @@
 
 .wrap {
   width: 500px;
+}
+
+.select {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+}
+.select.open .select__dropdown {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+.select.open .select__input {
+  border-bottom: none;
+}
+.select.open .select__backdrop {
+  display: block;
+}
+.select__input {
+  height: 46px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.select__input i {
+  transition: all 0.3s ease;
+}
+.select__dropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 2px 3px 5px #ccc;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  /* width */
+  /* Track */
+  /* Handle */
+}
+.select__dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+.select__dropdown::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+.select__dropdown::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+.select__backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: -1;
+  display: none;
+}
+.select__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.select__item {
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.select__item:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+.select__item:hover {
+  background-color: #ccc;
+}
+.select__item.selected {
+  background-color: bisque;
 }
 
 /*# sourceMappingURL=/JS-Select.e31bb0bc.css.map */
